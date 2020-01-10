@@ -135,3 +135,9 @@ alias last_friday_i="~/dotfiles/.scripts/tools/last_friday_i"
 
 export PATH="${PATH}:${HOME}/.local/bin/"
 source /home/cedric/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source $HOME/.aliases
