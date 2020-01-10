@@ -1,3 +1,7 @@
+# Pretty print of csv files
+#
+# usage : csview myfile.csv
+
 csview() {
   column -s, -t < $1 | less -#2 -N -S
 }
