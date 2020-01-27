@@ -67,6 +67,7 @@ set incsearch           " Highlight matches as you type.
 set hlsearch            " Highlight matches.
 set wildmode=longest,list,full " Enable autocompletion
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/* " Set ignored files and paths
+set path+=**
 let mapleader =","
 
 " ## Shared clipboard
