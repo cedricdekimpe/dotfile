@@ -115,17 +115,25 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/home/cedric/.local/bin:$PATH"
 export PATH=$PATH:"$ZSH_CUSTOM/plugins/navi"
 
-bindkey -v # Vi mode
+bindkey -v # Vi m
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+
 export KEYTIMEOUT=1 # reduce the timeout when changing mode
 
 # autoload -U edit-command-line
 # zle -N edit-command-line
 # bindkey -M vicmd v edit-command-line
 
-alias ca=cd ~/Code/AppTweak
-alias cab='cd ~/Code/AppTweak/apptweak-blog'
-alias cai='cd ~/Code/AppTweak/infrastructure'
-alias caw='cd ~/Code/AppTweak/webapp'
+alias ca=cd ~/code/apptweak
+alias caa=cd ~/code/apptweak/apptweak
+alias cab=cd ~/code/apptweak/apptweak-blog
+alias cai=cd ~/code/apptweak/infrastructure
 
 alias vim="nvim"
 
