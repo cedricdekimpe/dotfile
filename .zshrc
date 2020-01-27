@@ -115,7 +115,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/home/cedric/.local/bin:$PATH"
 export PATH=$PATH:"$ZSH_CUSTOM/plugins/navi"
 
-# bindkey -v # Vi mode
+bindkey -v # Vi mode
+export KEYTIMEOUT=1 # reduce the timeout when changing mode
+
 # autoload -U edit-command-line
 # zle -N edit-command-line
 # bindkey -M vicmd v edit-command-line
