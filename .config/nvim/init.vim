@@ -260,3 +260,7 @@ let g:airline_skip_empty_sections = 1
 " Requires vim-fugitive to work:
 " ignore whitespace changes
 " command Gslap Gblame -w
+
+" Move visual selection
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv
