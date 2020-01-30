@@ -244,6 +244,17 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
+" Coc config
+
+let g:coc_global_extensions = [
+  \ 'coc-pairs',
+  \ 'coc-solargraph',
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-json',
+  \ ]
+
 """"""""""
 
 " Syntax highlighting for hamlc
@@ -264,3 +275,6 @@ let g:airline_skip_empty_sections = 1
 " Move visual selection
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
+
+" Autogenerate a pdf version of a md file on save
+autocmd BufWritePost *.md !pandoc % -t beamer -o %:r.pdf
