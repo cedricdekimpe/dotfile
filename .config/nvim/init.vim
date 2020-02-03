@@ -278,3 +278,9 @@ vnoremap K :m '<-2<cr>gv=gv
 
 " Autogenerate a pdf version of a md file on save
 autocmd BufWritePost *.md !pandoc % -t beamer -o %:r.pdf
+
+" Jump to the last edited line when opening a file
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+  \ |   exe "normal! g`\""
+  \ | endif
