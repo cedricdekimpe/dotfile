@@ -47,8 +47,11 @@ nnoremap N Nzz
 " vnoremap <C-K> :m '<-2<CR>gv=gv
 
 " Use fzf-preview for `ff` and `ls`
-map ff :ProjectFilesPreview<cr>
-map ls :BuffersPreview<cr>
+" map ff :ProjectFilesPreview<cr>
+map ff :FzfPreviewProjectFiles<cr>
+" map ls :BuffersPreview<cr>
+map ls :FzfPreviewBuffers<cr>
+map gs :FzfPreviewGitStatus<cr>
 
 " # Misc config
 "
