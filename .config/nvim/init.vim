@@ -20,6 +20,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'vim-airline/vim-airline-themes' " status bar
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'tpope/vim-rails'
 
 call plug#end()
 
