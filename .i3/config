@@ -419,4 +419,4 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-bindsym Ctrl+Shift+t exec ~/.config/scripts/touchpad-toggle.sh
+bindsym $mod+Ctrl+Shift+t exec ~/.config/scripts/touchpad-toggle.sh
