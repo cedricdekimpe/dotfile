@@ -12,15 +12,15 @@ if xrandr | grep "$extern disconnected"; then
 #   xrandr --output $extern --scale 2x2 --mode 3840x2160 
 #   echo "-> Desktop Mode - Asus 4K"
 
-elif xrandr | grep "$extern connected 3840x2160+0+0"; then
-  # $internalSettings --fb 3840x2160
-  $internalSettings --fb 5760x2160
-  xrandr --output $extern --scale 2x2 --mode 1920x1080
-  echo "-> Desktop Mode - Samsung 1920x1080"
+# elif xrandr | grep "$extern connected 3840x2160+0+0"; then
+#   # $internalSettings --fb 3840x2160
+#   $internalSettings --fb 5760x2160
+#   xrandr --output $extern --scale 2x2 --mode 1920x1080 #--left-of $intern
+#   echo "-> Desktop Mode - Samsung 1920x1080"
 
 else
-  $internalSettings --fb 3840x2160
-  xrandr --output $extern --scale 2x2 --mode 1920x1080
+  $internalSettings --fb 5760x2160
+  xrandr --output $extern --scale 2x2 --mode 1920x1080 --right-of $intern
   echo "-> Desktop Mode 1920x1080"
 
 fi
