@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# For emoji support, install ttf-twemoji-color
+
+delim="|"
+
+datetime() {
+  echo "$(date '+%Y %b %d (%a) %I:%M%p')"
+}
+
+battery_percentage() {
+  echo "$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'percentage:' | tr -cd '[[:digit:]]')"
+}
+
+battery_status() {
+  echo "$(upower -i /org/freedesktop/UPower/devices/DisplayDevice | awk '/state:(.*)/ { print $2}')"
+}
+
+battery_icon() {
+  status=$(battery_status)
+  case "$status" in
+    "fully-charged" )
+      echo "⚡" ;;
+    "discharging" )
+      echo "🔋" ;;
+    "charging" )
+      echo "🔌" ;;
+    
+  esac
+}
+
+status () {
+  echo "$(battery_icon)"
+  echo "$(battery_percentage)%"
+  echo $delim
+  echo "$(battery_status)"
+  echo $delim
+  echo "$(datetime)"
+}
+
+echo "$(status)"
+
+while :; do 
+  xsetroot -name "$(status | tr '\n' ' ')"
+  sleep 1m
+done
