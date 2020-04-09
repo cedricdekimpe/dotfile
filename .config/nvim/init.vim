@@ -20,10 +20,19 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'vim-airline/vim-airline-themes' " status bar
-Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'oblitum/rainbow'
+Plug 'paulkass/jira-vim'
 Plug 'tpope/vim-rails'
+Plug 'rorymckinley/vim-rubyhash' "convert ruby hash via rs rt and rs
+Plug 'pbrisbin/vim-mkdir' " self explanatory
+
+let g:jiraVimDomainName = "https://apptweak.atlassian.net"
+let g:jiraVimEmail = "cedric@bousmanne.com"
+let g:jiraVimToken = "u6YgZfiAKnMC5TxDj3L78C56"
 
 call plug#end()
+
+" let g:rainbow_active = 1 " activate rainbow
 
 " # Mapping
 "

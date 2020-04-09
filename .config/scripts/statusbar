@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # For emoji support, install ttf-twemoji-color
+# For current song support, install mpc
 
 delim="|"
 
@@ -29,7 +30,16 @@ battery_icon() {
   esac
 }
 
+current_song() {
+  if hash mpc 2>/dev/null; then
+    echo "$(mpc current)"
+  fi
+}
+
+
 status () {
+  echo "$(current_song)"
+  echo $delim
   echo "$(battery_icon)"
   echo "$(battery_percentage)%"
   echo $delim
