@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sh ~/.config/scripts/statusbar &
+# sh ~/.config/scripts/statusbar &
 
 while :; do
   ssh-agent dwm || break

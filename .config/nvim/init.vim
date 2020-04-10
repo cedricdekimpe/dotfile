@@ -25,6 +25,8 @@ Plug 'paulkass/jira-vim'
 Plug 'tpope/vim-rails'
 Plug 'rorymckinley/vim-rubyhash' "convert ruby hash via rs rt and rs
 Plug 'pbrisbin/vim-mkdir' " self explanatory
+" Plug 'stefanoverna/vim-i18n'
+Plug '~/code/vim-i18n'
 
 let g:jiraVimDomainName = "https://apptweak.atlassian.net"
 let g:jiraVimEmail = "cedric@bousmanne.com"
@@ -298,3 +300,9 @@ autocmd BufReadPost *
   \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
   \ |   exe "normal! g`\""
   \ | endif
+
+" i18n-rails mapping
+vmap <Leader>z :call I18nTranslateString()<CR>
+vmap <Leader>dt :call I18nDisplayTranslation()<CR>
+nmap <Leader>tl ^v$h,z<CR>
+
