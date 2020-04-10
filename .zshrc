@@ -109,7 +109,6 @@ export NODE_PATH=/home/cedric/.nvm/versions/node/v11.6.0/lib/node_modules/
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -117,12 +116,9 @@ export PATH="/home/cedric/.local/bin:$PATH"
 export PATH=$PATH:"$ZSH_CUSTOM/plugins/navi"
 
 bindkey -v # Vi m
-# bindkey '^P' up-history
-# bindkey '^N' down-history
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
-bindkey '^r' history-incremental-search-backward
 
 export KEYTIMEOUT=1 # reduce the timeout when changing mode
 
@@ -152,6 +148,7 @@ alias yesterday_i="~/dotfiles/.scripts/tools/yesterday_i"
 alias last_friday_i="~/dotfiles/.scripts/tools/last_friday_i"
 
 alias vimrc="vim ~/.config/nvim/init.vim"
+alias zshrc="vim ~/.zshrc"
 
 # [ -f ~/.forgit/forgit.plugin.zsh ] && source ~/.forgit/forgit.plugin.zsh
 
@@ -163,3 +160,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source $HOME/.aliases
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
