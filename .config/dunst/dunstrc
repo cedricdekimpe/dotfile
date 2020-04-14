@@ -4,7 +4,7 @@
     format = "<b>%s</b>\n%b"
     bounce_freq = 0
     word_wrap = yes
-    geometry = "200x5-6+30"
+    geometry = "0x5-6+30"
     transparency = 0
     separator_height = 2
     horizontal_padding = 8
@@ -114,7 +114,7 @@
     # 
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = mouse
+    follow = keyboard
     
     # Should a notification popped up from history be sticky or timeout
     # as if it would normally do.

@@ -67,19 +67,16 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL }; */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray1, NULL };
-static const char *termcmd[]  = { "termite", NULL };
+static const char *t| sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,'ermcmd[]  = { "termite", NULL };
 static const char *blurlock[] = { "blurlock", NULL };
 static const char *neomutt[] = { "termite", "-e", "neomutt" };
 static const char *pms[] = { "termite", "-e", "/home/cedric/go/bin/pms" };
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "1", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "1", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "1", "toggle",  NULL };
-<<<<<<< HEAD
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "$(pactl list short | grep RUNNING| sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,')", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "$(pactl list short | grep RUNNING| sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,')", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "$(pactl list short | grep RUNNING| sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,')", "toggle",  NULL };
 static const char *play[] = { "mpc", "toggle", NULL };
 static const char *prev[] = { "mpc", "prev", NULL };
 static const char *next[] = { "mpc", "next", NULL };
-=======
->>>>>>> 49d774a6fbc0caf42584ba7092a457044d1a2480
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
