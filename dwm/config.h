@@ -74,9 +74,12 @@ static const char *pms[] = { "termite", "-e", "/home/cedric/go/bin/pms" };
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "1", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "1", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "1", "toggle",  NULL };
+<<<<<<< HEAD
 static const char *play[] = { "mpc", "toggle", NULL };
 static const char *prev[] = { "mpc", "prev", NULL };
 static const char *next[] = { "mpc", "next", NULL };
+=======
+>>>>>>> 49d774a6fbc0caf42584ba7092a457044d1a2480
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
