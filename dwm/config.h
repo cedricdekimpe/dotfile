@@ -1,3 +1,5 @@
+#include <X11/XF86keysym.h>
+
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
@@ -69,6 +71,9 @@ static const char *termcmd[]  = { "termite", NULL };
 static const char *blurlock[] = { "blurlock", NULL };
 static const char *neomutt[] = { "termite", "-e", "neomutt" };
 static const char *pms[] = { "termite", "-e", "/home/cedric/go/bin/pms" };
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "1", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "1", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "1", "toggle",  NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -126,6 +131,12 @@ static Key keys[] = {
     /* { MODKEY|ShiftMask,             XK_q,      quit,           {0} }, */
     /* { MODKEY|ShiftMask,             XK_c,      quit,           {0} }, */
     { MODKEY|ShiftMask,             XK_c,    quit,             {.i = 23} },
+    { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
+    { 0,                            XF86XK_AudioMute,        spawn, {.v = mutevol } },
+    { 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+    { MODKEY,                       XK_F2,                   spawn, {.v = downvol } },
+    { MODKEY,                       XK_F1,                   spawn, {.v = mutevol } },
+    { MODKEY,                       XK_F3,                   spawn, {.v = upvol   } },
 };
 
 /* button definitions */
