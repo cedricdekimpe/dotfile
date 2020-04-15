@@ -19,8 +19,9 @@ if xrandr | grep "$extern disconnected"; then
 #   echo "-> Desktop Mode - Samsung 1920x1080"
 
 else
-  $internalSettings --fb 5760x2160
-  xrandr --output $extern --scale 2x2 --mode 1920x1080 --right-of $intern
+  # $internalSettings --fb 5760x2160
+  $internalSettings --fb 7680x2160 --pos 3840x0
+  xrandr --output $extern --scale 2x2 --mode 1920x1080
   echo "-> Desktop Mode 1920x1080"
 
 fi
