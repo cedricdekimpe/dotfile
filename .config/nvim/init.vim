@@ -9,6 +9,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ianks/vim-tsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'kchmck/vim-coffee-script'
+Plug 'sirtaj/vim-openscad'
 
 " Snippets
 Plug 'honza/vim-snippets'
@@ -306,3 +307,7 @@ vmap <Leader>z :call I18nTranslateString()<CR>
 vmap <Leader>dt :call I18nDisplayTranslation()<CR>
 nmap <Leader>tl ^v$h,z<CR>
 
+" Compile openscad image on save
+autocmd BufWritePost *.scad :silent !openscad -o %:r.png %
+" Automatically open png version of a scad file with feh on opening
+autocmd BufRead *.scad :silent !feh %:r.png&
