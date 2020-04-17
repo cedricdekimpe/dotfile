@@ -67,24 +67,14 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL }; */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray1, NULL };
-static const char *t| sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,'ermcmd[]  = { "termite", NULL };
+static const char *termcmd[]  = { "termite", NULL };
 static const char *blurlock[] = { "blurlock", NULL };
-static const char *neomutt[] = { "termite", "-e", "neomutt" };
-static const char *pms[] = { "termite", "-e", "/home/cedric/go/bin/pms" };
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "1", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "1", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "1", "toggle",  NULL };
-static const char *play[] = { "mpc", "toggle", NULL };
-static const char *prev[] = { "mpc", "prev", NULL };
-static const char *next[] = { "mpc", "next", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_x,      spawn,          {.v = blurlock } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ControlMask,           XK_m,      spawn,          {.v = pms } },
-	{ MODKEY|ControlMask,           XK_n,      spawn,          {.v = neomutt } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -134,16 +124,6 @@ static Key keys[] = {
     /* { MODKEY|ShiftMask,             XK_q,      quit,           {0} }, */
     /* { MODKEY|ShiftMask,             XK_c,      quit,           {0} }, */
     { MODKEY|ShiftMask,             XK_c,    quit,             {.i = 23} },
-    { 0,                            XF86XK_AudioPlay,        spawn, {.v = play } },
-    { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-    { 0,                            XF86XK_AudioMute,        spawn, {.v = mutevol } },
-    { 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
-    { MODKEY,                       XK_F1,                   spawn, {.v = mutevol } },
-    { MODKEY,                       XK_F2,                   spawn, {.v = downvol } },
-    { MODKEY,                       XK_F3,                   spawn, {.v = upvol   } },
-    { MODKEY,                       XK_F4,                   spawn, {.v = prev   } },
-    { MODKEY,                       XK_F5,                   spawn, {.v = play   } },
-    { MODKEY,                       XK_F6,                   spawn, {.v = next   } },
 };
 
 /* button definitions */
