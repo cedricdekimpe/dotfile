@@ -68,6 +68,9 @@
 "sh /home/cedric/.config/scripts/love-current-track.sh"
   XF86Favorites
 
+"sh /home/cedric/.config/scripts/share-current-track.sh"
+  Shift+XF86Favorites
+
 "termite -e neomutt"
   Mod2+Mod4 + Control + n
 
