@@ -69,40 +69,40 @@
   XF86Favorites
 
 "termite -e neomutt"
-  Mod4 + Control + n
+  Mod2+Mod4 + Control + n
 
 "termite -e /home/cedric/go/bin/pms"
-  Mod4 + Control + m
+  Mod2+Mod4 + Control + m
 
-"/usr/bin/pactl set-sink-volume 0 +5%"
-  XF86XK_AudioRaiseVolume
+"/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%"
+  XF86AudioRaiseVolume
 
-"/usr/bin/pactl set-sink-volume 0 +5%"
-  Mod4 + F3
+"/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%"
+  Mod2+Mod4 + F3
 
-"/usr/bin/pactl set-sink-volume 0 -5%"
-  XF86XK_AudioLowerVolume
+"/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  XF86AudioLowerVolume
 
-"/usr/bin/pactl set-sink-volume 0 -5%"
-  Mod4 + F2
+"/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  Mod2+Mod4 + F2
+
+"/usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  XF86AudioMute
 
 "/usr/bin/pactl set-sink-mute toggle"
-  XF86XK_AudioMute
-
-"/usr/bin/pactl set-sink-mute toggle"
-  Mod4 + F1
+  Mod2+Mod4 + F1
 
 "mpc toggle"
-  XF86XK_AudioPlay
+  XF86_AudioPlay
 
 "mpc toggle"
-  Mod4 + F5
+  Mod2+Mod4 + F5
 
 "mpc prev"
-  Mod4 + F4
+  Mod2+Mod4 + F4
 
 "mpc next"
-  Mod4 + F6
+  Mod2+Mod4 + F6
 
 ##################################
 # End of xbindkeys configuration #
