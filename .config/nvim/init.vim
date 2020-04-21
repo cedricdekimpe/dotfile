@@ -28,6 +28,7 @@ Plug 'rorymckinley/vim-rubyhash' "convert ruby hash via rs rt and rs
 Plug 'pbrisbin/vim-mkdir' " self explanatory
 " Plug 'stefanoverna/vim-i18n'
 Plug '~/code/vim-i18n'
+Plug 'jiangmiao/auto-pairs' "https://www.youtube.com/watch?v=4-uKkQ1fJ:s
 
 let g:jiraVimDomainName = "https://apptweak.atlassian.net"
 let g:jiraVimEmail = "cedric@bousmanne.com"
@@ -263,8 +264,8 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " Coc config
 
+" coc-pairs disabled because of jiangmiao/auto-pairs
 let g:coc_global_extensions = [
-  \ 'coc-pairs',
   \ 'coc-solargraph',
   \ 'coc-tsserver',
   \ 'coc-eslint',
@@ -311,3 +312,6 @@ nmap <Leader>tl ^v$h,z<CR>
 autocmd BufWritePost *.scad :silent !openscad -o %:r.png %
 " Automatically open png version of a scad file with feh on opening
 autocmd BufRead *.scad :silent !feh %:r.png&
+
+" jiangmiao/auto-pairs
+let g:AutoPairsFlyMode = 1
