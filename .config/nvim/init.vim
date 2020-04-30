@@ -89,6 +89,7 @@ set wildmode=longest,list,full " Enable autocompletion
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/* " Set ignored files and paths
 set path+=**
 let mapleader =","
+set cursorline " highlight the current line
 
 " ## Shared clipboard
 " makes y and p copy and paste to the “global” buffer that is used by other apps
