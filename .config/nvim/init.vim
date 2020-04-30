@@ -29,6 +29,8 @@ Plug 'pbrisbin/vim-mkdir' " self explanatory
 " Plug 'stefanoverna/vim-i18n'
 Plug '~/code/vim-i18n'
 Plug 'jiangmiao/auto-pairs' "https://www.youtube.com/watch?v=4-uKkQ1fJ:s
+Plug 'tpope/vim-surround'
+Plug 'tommcdo/vim-lion'
 
 let g:jiraVimDomainName = "https://apptweak.atlassian.net"
 let g:jiraVimEmail = "cedric@bousmanne.com"
@@ -314,4 +316,4 @@ autocmd BufWritePost *.scad :silent !openscad -o %:r.png %
 autocmd BufRead *.scad :silent !feh %:r.png&
 
 " jiangmiao/auto-pairs
-let g:AutoPairsFlyMode = 1
+" let g:AutoPairsFlyMode = 1
