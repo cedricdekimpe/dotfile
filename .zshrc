@@ -161,4 +161,7 @@ export NVM_DIR="$HOME/.nvm"
 
 source $HOME/.aliases
 
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
