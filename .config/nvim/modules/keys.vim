@@ -28,3 +28,6 @@ vnoremap K :m '<-2<cr>gv=gv
 vmap <Leader>z :call I18nTranslateString()<CR>
 vmap <Leader>dt :call I18nDisplayTranslation()<CR>
 nmap <Leader>tl ^v$h,z<CR>
+
+" vim-which-key
+nnoremap <silent> <leader> :WhichKey ','<CR>

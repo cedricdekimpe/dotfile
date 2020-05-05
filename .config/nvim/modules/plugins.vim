@@ -20,3 +20,5 @@ Plug '~/code/vim-i18n'
 Plug 'jiangmiao/auto-pairs' "https://www.youtube.com/watch?v=4-uKkQ1fJ:s
 Plug 'tpope/vim-surround'
 Plug 'tommcdo/vim-lion'
+
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
