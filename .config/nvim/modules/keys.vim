@@ -31,3 +31,6 @@ nmap <Leader>tl ^v$h,z<CR>
 
 " vim-which-key
 nnoremap <silent> <leader> :WhichKey ','<CR>
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>

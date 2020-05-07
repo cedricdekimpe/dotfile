@@ -22,3 +22,4 @@ Plug 'tpope/vim-surround'
 Plug 'tommcdo/vim-lion'
 
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'majutsushi/tagbar'
