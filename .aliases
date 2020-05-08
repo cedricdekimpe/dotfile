@@ -8,7 +8,8 @@ csview() {
 
 # git aliases
 
-alias ga="git add ."
+alias ga="git add \${1}"
+alias gaa="git add ."
 alias gc="git commit -m \${1}"
 alias gco="git checkout \${1} \${2}"
 alias gd="git diff"
@@ -17,7 +18,8 @@ alias gs="git status"
 
 # yadm aliases (mostly git aliases prefixed with `y` instead of ´g´)
 
-alias ya="yadm add ."
+alias ya="yadm add \${1}"
+alias yaa="yadm add ."
 alias yc="yadm commit -m \${1}"
 alias yd="yadm diff"
 alias ys="yadm status"
