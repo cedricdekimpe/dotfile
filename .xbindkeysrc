@@ -39,16 +39,16 @@
 
 # Examples of commands:
 
-"xbindkeys_show" 
-  control+shift + q
+# "xbindkeys_show" 
+#   control+shift + q
 
-# set directly keycode (here control + f with my keyboard)
-"xterm"
-  c:41 + m:0x4
+# # set directly keycode (here control + f with my keyboard)
+# "xterm"
+#   c:41 + m:0x4
 
-# specify a mouse button
-"xterm"
-  control + b:2
+# # specify a mouse button
+# "xterm"
+#   control + b:2
 
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
@@ -76,6 +76,12 @@
 
 "termite -e /home/cedric/go/bin/pms"
   Mod2+Mod4 + Control + m
+
+"sh /home/cedric/dmenu-emoji/dmenu-emoji.sh"
+  Mod2+Mod4 + Control + e
+
+"sh /home/cedric/.config/scripts/passmenu"
+  Mod2+Mod4 + Shift + Alt + p
 
 "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%"
   XF86AudioRaiseVolume
@@ -106,6 +112,9 @@
 
 "mpc next"
   Mod2+Mod4 + F6
+
+"flameshot gui"
+  Print
 
 ##################################
 # End of xbindkeys configuration #
