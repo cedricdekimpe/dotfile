@@ -91,6 +91,12 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+function! RubocopAutocorrect()
+  execute "!rubocop -a " . bufname("%")
+endfunction
+
+map <silent> <Leader>cop :call RubocopAutocorrect()<cr>
+
 " Create mappings for function text object, requires document symbols feature of languageserver.
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
