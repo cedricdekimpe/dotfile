@@ -5,6 +5,7 @@
 [alias]
 	st = status
 	appraise = !~/go/bin/git-appraise
+	amend = commit --amend --no-edit
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
