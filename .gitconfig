@@ -1,0 +1,16 @@
+[user]
+	email = cedric@bousmanne.com
+	name = Cédric Bousmanne
+	signingkey = DAEF47D1
+[alias]
+	st = status
+	appraise = !~/go/bin/git-appraise
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
