@@ -18,15 +18,26 @@ result=$(curl -X "PUT" "https://api.spotify.com/v1/me/tracks?ids=$current_track_
 error=$(echo $result | jq .error.message)
 status=$(echo $result | jq .error.status)
 
+fetch_spotify_token(){
+    notify-send "Fetching new token"
+    rm ~/.spotify_token
+    token=$(spotify-token --scope=user-library-modify | gawk '{split($0,a); print a[4]}' | head -2 | tail -1)
+    echo "SPOTIFY_USER_LIBRARY_MODIFY_TOKEN=$token"
+    echo "SPOTIFY_USER_LIBRARY_MODIFY_TOKEN=$token" > ~/.spotify_token
+}
+
 echo $error
 if [ -z "$error" ]; then
   notify-send "❤️  Loved $current_track_name on Spotify 🎵"
   break
 else
   notify-send "💔 Couldn't love $current_track_name, $error [$status]" | tr '\n' ' '
-  if [ $status -eq 401 ]; then
-    token=$(spotify-token --scope=user-library-modify | gawk '{split($0,a); print a[4]}' | head -2 | tail -1)
-    echo "SPOTIFY_USER_LIBRARY_MODIFY_TOKEN=$token" > ~/.spotify_token
+  if [ $status -eq 400 ]; then
+    fetch_spotify_token
+    notify-send "New token received, retrying"
+    # $("$0")
+  elif [ $status -eq 401 ]; then
+    fetch_spotify_token
     notify-send "New token received, retrying"
     $("$0")
   fi

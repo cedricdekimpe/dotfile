@@ -67,8 +67,6 @@ static const struct arg args[] = {
 	{ load_avg,          "load %.4s | ",    NULL },
 	{ cpu_perc,          "cpu %s%% | ",     NULL },
 	{ disk_free,         "hdd %sB | ",      "/" },
-	{ ipv4,              "lan %s | ",       "enp3s0" },
-	{ wifi_essid,        "wlan %s | ",      "wlp3s0" },
 	{ battery_state,     "%s ",             "BAT0" },
 	{ battery_perc,      "%s%% | ",         "BAT0" },
 	{ datetime,          "%s",              "%b-%d %H:%M" },

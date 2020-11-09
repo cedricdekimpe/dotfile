@@ -36,7 +36,7 @@ set expandtab       " Expand TABs to spaces
 au BufRead,BufNewFile *.hamlc set ft=haml
 
 " Autogenerate a pdf version of a md file on save
-autocmd BufWritePost *.md !pandoc % -t beamer -o %:r.pdf
+" autocmd BufWritePost *.md !pandoc % -t beamer -o %:r.pdf
 
 " Jump to the last edited line when opening a file
 autocmd BufReadPost *

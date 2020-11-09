@@ -22,4 +22,7 @@ Plug 'tpope/vim-surround'
 Plug 'tommcdo/vim-lion'
 
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+
+" ctags
 Plug 'majutsushi/tagbar'
+Plug 'universal-ctags/ctags'

@@ -23,3 +23,7 @@ alias yaa="yadm add ."
 alias yc="yadm commit -m \${1}"
 alias yd="yadm diff"
 alias ys="yadm status"
+
+# other aliases
+
+alias bfg="~/.config/scripts/bfg"

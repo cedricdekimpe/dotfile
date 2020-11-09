@@ -1,5 +1,8 @@
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" coc-yank configuration
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
 " # coc config - shamelessly copypasted from awesomevim.com
 
 " if hidden is not set, TextEdit might fail.
@@ -18,8 +21,12 @@ set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
-" always show signcolumns
-set signcolumn=yes
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
