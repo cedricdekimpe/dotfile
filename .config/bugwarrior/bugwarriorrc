@@ -1,0 +1,9 @@
+[general]
+targets = jira
+
+[jira]
+service = jira
+jira.base_uri = https://apptweak.atlassian.net
+jira.username = cedric@bousmanne.com
+jira.password = @oracle:use_keyring
+jira.add_tags = apptweak
