@@ -1,0 +1,23 @@
+#!/bin/bash
+
+DOMAIN_LIST_FILE=~/'domains.txt'
+OTHER_BROWSER='/usr/bin/tuir' # For instance /usr/bin/firefox
+BROWSER_OPTIONS='' # Optional, for command line options passed to browser
+XDG_OPEN='/usr/bin/xdg-open'
+
+if echo "$1" | pcregrep -q '^https?://'; then
+    matching=0
+    while read domain; do
+        if echo "$1" | pcregrep -q "^https?://${domain}"; then
+            matching=1
+            break
+        fi
+    done < "$DOMAIN_LIST_FILE"
+
+    if [[ $matching -eq 1 ]]; then
+        "$OTHER_BROWSER" $BROWSER_OPTIONS ${*}
+        exit 0
+    fi
+fi
+
+"$XDG_OPEN" ${*}
