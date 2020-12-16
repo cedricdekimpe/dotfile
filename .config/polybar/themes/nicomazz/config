@@ -37,11 +37,12 @@ font-4 = FontAwesome:size=11;0
 
 
 modules-left = mpd i3 
-modules-right = cpu memory temperature filesystem xkeyboard volume wireless-network consumation  battery date        
+; modules-right = cpu memory temperature filesystem xkeyboard volume wireless-network consumation  battery date        
+modules-right = cpu memory temperature filesystem xkeyboard volume wireless-network  battery date        
 
 wm-restack = i3
 
-tray-position = right 
+tray-position = none 
 tray-scale = 1.0
 ;tray-transparent = true
 tray-background = ${self.background}
@@ -89,11 +90,11 @@ modules-left = i3 spotify
 modules-right = cpu memory temperature filesystem xkeyboard volume wireless-network consumation  battery date        
 #modules-right = cpu memory  filesystem volume backlight   battery date
 
-tray-position = right 
-tray-scale = 1.0
-;tray-transparent = true
-tray-background = ${self.background}
-tray-maxsize = 64
+tray-position = none 
+;tray-scale = 1.0
+;;tray-transparent = true
+;tray-background = ${self.background}
+;tray-maxsize = 32
 
 tray-offset-y = 0
 [module/backlight]
@@ -298,7 +299,7 @@ icon-repeat = 
 toggle-on-foreground =
 toggle-off-foreground = #55
 
-bar-progress-width = 45
+bar-progress-width = 25
 bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
 bar-progress-indicator = |
 bar-progress-indicator-foreground = #ff
