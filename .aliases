@@ -24,6 +24,15 @@ alias yc="yadm commit -m \${1}"
 alias yd="yadm diff"
 alias ys="yadm status"
 
+# terjira aliases
+
+## jmb stands for Jira My Bugs - Tickets from the DEB project, assigned to me, with a status Selected for Dev
+alias jmb="jira issue ls --project DEB"
+
+## jmw stands for Jira My Work - All pending tickets assigned to me
+alias jmw="jira issue jql 'assignee=cedric\u0040bousmanne.com' and status!='done' and status !='dropped' and status!='\"in prod\"' and status!='archive' and status!='validated' and status!='\"cannot reproduce\"'"
+
+
 # other aliases
 
 alias bfg="~/.config/scripts/bfg"
