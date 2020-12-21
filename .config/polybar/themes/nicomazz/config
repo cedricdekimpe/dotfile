@@ -36,7 +36,7 @@ font-3 = Siji:pixelsize=11;1
 font-4 = FontAwesome:size=11;0
 
 
-modules-left = mpd i3 
+modules-left = i3 mpd
 ; modules-right = cpu memory temperature filesystem xkeyboard volume wireless-network consumation  battery date        
 modules-right = cpu memory temperature filesystem xkeyboard volume wireless-network  battery date        
 
@@ -134,8 +134,8 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
 
-label-charging = %percentage%% %time%h
-label-discharging = %percentage%% %time%h 
+label-charging = %percentage%%
+label-discharging = %percentage%%
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #f53c3c
 ramp-capacity-1 = 
@@ -262,7 +262,7 @@ ramp-coreload-7-foreground = #ff5555
 
 [module/date]
 type = internal/date
-date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M:%S%%{F-}
+date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M
 date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 
 [module/memory]
@@ -296,6 +296,7 @@ icon-next = 
 icon-random = 
 icon-repeat = 
 
+label-song-maxlen = 30
 toggle-on-foreground =
 toggle-off-foreground = #55
 
@@ -419,7 +420,7 @@ label-warn-foreground = #f00
 
 ramp-0 = 
 ramp-1 = 
-ramp-2 = 
+ramp-2 = 
 ramp-foreground = #66
 
 
