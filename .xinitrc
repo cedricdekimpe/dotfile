@@ -37,9 +37,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 touch /tmp/login.log
-echo "foooo" > /tmp/login.log
 slstatus &
+/home/cedric/.config/scripts/monitor.sh &
 /home/cedric/.config/scripts/monitor.sh &
 xmodmap ~/.Xmodmaprc &
 xbindkeys &
-exec dwm
+remind -z -k'notify-send "Reminder"  "%s"' ~/.reminders
+exec awesome
