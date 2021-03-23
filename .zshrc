@@ -166,3 +166,6 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+eval "$(bw completion --shell zsh); compdef _bw bw;"
+remind ~/.reminders
