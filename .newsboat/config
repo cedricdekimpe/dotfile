@@ -1,0 +1,10 @@
+# Theme
+include "~/.newsboat/colors/gruvbox"
+
+auto-reload yes
+notify-program "nb-notify"
+notify-format "New articles: %d\nTotal unread: %n article(s), %f feed(s)"
+
+external-url-viewer "urlscan -dc -r 'qutebrowser {}'"
+browser qutebrowser
+

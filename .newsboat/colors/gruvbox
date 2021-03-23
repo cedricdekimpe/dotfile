@@ -1,0 +1,5 @@
+# Color settings (Gruvbox)
+color listfocus             white   black   bold
+color listnormal_unread     red     black
+color listfocus_unread      red     black   bold
+color info                  white   yellow  bold
