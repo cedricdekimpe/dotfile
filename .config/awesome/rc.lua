@@ -440,19 +440,19 @@ globalkeys = my_table.join(
               {description = "-10%", group = "hotkeys"}),
 
     -- ALSA volume control
-    awful.key({ altkey }, "Up",
+    awful.key({ }, "XF86AudioRaiseVolume",
         function ()
             os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
             beautiful.volume.update()
         end,
         {description = "volume up", group = "hotkeys"}),
-    awful.key({ altkey }, "Down",
+    awful.key({ }, "XF86AudioLowerVolume",
         function ()
             os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
             beautiful.volume.update()
         end,
         {description = "volume down", group = "hotkeys"}),
-    awful.key({ altkey }, "m",
+    awful.key({ }, "XF86AudioMute",
         function ()
             os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
             beautiful.volume.update()
@@ -472,7 +472,7 @@ globalkeys = my_table.join(
         {description = "volume 0%", group = "hotkeys"}),
 
     -- MPD control
-    awful.key({ altkey, "Control" }, "Up",
+    awful.key({  }, "XF86AudioPlay",
         function ()
             os.execute("mpc toggle")
             beautiful.mpd.update()
@@ -544,6 +544,11 @@ globalkeys = my_table.join(
         end,
         {description = "show rofi", group = "launcher"}),
     --]]
+    awful.key({ modkey, "Shift" }, "p", function ()
+            os.execute(string.format("rofi -show %s -theme %s",
+            'combi', 'gruvbox-dark'))
+        end,
+        {description = "show rofi", group = "launcher"}),
     awful.key({ modkey }, "p", function ()
             os.execute(string.format("rofi -show %s -theme %s",
             'drun', 'gruvbox-dark'))
