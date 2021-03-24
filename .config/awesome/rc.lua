@@ -554,6 +554,11 @@ globalkeys = my_table.join(
             'drun', 'gruvbox-dark'))
         end,
         {description = "show rofi", group = "launcher"}),
+    awful.key({ modkey }, "k", function ()
+            os.execute(string.format("keepmenu"))
+        end,
+
+        {description = "show keepmenu", group = "launcher"}),
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
