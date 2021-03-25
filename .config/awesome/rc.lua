@@ -57,7 +57,16 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "urxvtd", "unclutter -root" }) -- entries must be separated by commas
+run_once({ 
+  "urxvtd", 
+  "unclutter -root",
+  "qutebrowser",
+  "Element",
+  "Slack",
+  "neomutt-launcher",
+  "newsboat-launcher",
+  "ncmpcpp-launcher"
+}) -- entries must be separated by commas
 
 -- This function implements the XDG autostart specification
 --[[
@@ -554,7 +563,7 @@ globalkeys = my_table.join(
             'drun', 'gruvbox-dark'))
         end,
         {description = "show rofi", group = "launcher"}),
-    awful.key({ modkey }, "k", function ()
+    awful.key({ modkey }, "a", function ()
             os.execute(string.format("keepmenu"))
         end,
 
@@ -709,9 +718,30 @@ awful.rules.rules = {
     { rule_any = { type = { "dialog", "normal" } },
       properties = { titlebars_enabled = true } },
 
-    -- Set Firefox to always map on the first tag on screen 1.
-    { rule = { class = "Firefox" },
-      properties = { screen = 1, tag = awful.util.tagnames[1] } },
+    -- Set qutebrowser to always map on the first tag on screen 2.
+    { rule = { class = "qutebrowser" },
+      properties = { screen = 2, tag = awful.util.tagnames[1] } },
+
+    -- Set element to always map on the 8th tag on screen 2.
+    -- { rule = { class = "Element" },
+    --   properties = { screen = 2, tag = awful.util.tagnames[8] } },
+
+    -- Set newsboat to always map on the 9th tag on screen 2.
+    { rule = { class = "Newsboat" },
+      properties = { screen = 2, tag = awful.util.tagnames[9] } },
+
+    -- Set neomutt to always map on the 9th tag on screen 2.
+    { rule = { class = "Neomutt" },
+      properties = { screen = 2, tag = awful.util.tagnames[9] } },
+
+    -- Set qutebrowser to always map on the first tag on screen 1.
+    { rule = { class = "Slack" },
+      properties = { screen = 1, tag = awful.util.tagnames[5] } },
+      
+    -- Set ncmpcpp to always map on the 9th tag on screen 1.
+    { rule = { class = "ncmpcpp" },
+      properties = { screen = 1, tag = awful.util.tagnames[9] } },
+
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized = true } },
@@ -792,3 +822,22 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- possible workaround for tag preservation when switching back to default screen:
 -- https://github.com/lcpz/awesome-copycats/issues/251
 -- }}}
+
+-- Autorun programs
+autorun = true
+autorunApps = 
+{
+  "qutebrowser",
+  "Element",
+  "Slack",
+  "neomutt-launcher",
+  "newsboat-launcher",
+  "ncmpcpp-launcher",
+  -- "wtfutil",
+}
+
+if autorun then
+   for app = 1, #autorunApps do
+       -- awful.util.spawn(autorunApps[app])
+   end
+end

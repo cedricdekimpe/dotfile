@@ -1,0 +1,2 @@
+#/bin/bash
+$(which termite) -e neomutt --class Neomutt
