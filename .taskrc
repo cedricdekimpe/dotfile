@@ -28,4 +28,26 @@ data.location=~/.task
 #include /usr/share/doc/task/rc/solarized-dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
-include ~/.config/taskwarrior/themes/gruvbox-dark-256.taskwarrior.theme
+#include ~/.config/taskwarrior/themes/gruvbox-dark-256.taskwarrior.theme
+include ~/.config/taskwarrior/themes/nord.theme
+
+
+#taskd.certificate=~/.config/taskwarrior/private.certificate.pem
+#taskd.key=~/.config/taskwarrior/private.key.pem
+#taskd.ca=~/.config/taskwarrior/ca.crt
+#taskd.server=inthe.am:53589
+#taskd.credentials=inthe_am/akyrho/29c2912c-cd33-470c-8e8d-3d3b00c04e19
+#taskd.trust=strict
+
+taskd.server=app.wingtask.com:53589
+taskd.key=$HOME/.wingtask_certs/cedric@bousmanne.com.key.pem
+taskd.ca=$HOME/.wingtask_certs/letsencrypt_root_cert.pem
+taskd.certificate=$HOME/.wingtask_certs/cedric@bousmanne.com.cert.pem
+taskd.credentials=WingTask/cedric@bousmanne.com/01c69ea6-de47-4236-adf2-2647191704b0
+
+#news.version=2.6.0
+context.work.read=project:APT or +urgent
+context.work.write=project:APT or +urgent
+context=work
+
+urgency.user.tag.debug.coefficient=20 # +debug tag
