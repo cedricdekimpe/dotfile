@@ -188,3 +188,5 @@ export PATH="/home/cedric/.gem/ruby/2.7.0:$PATH"
 
 export DENO_INSTALL="/home/cedric/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+export NOTES_DIR="/home/cedric/Documents/Notes"
