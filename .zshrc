@@ -67,9 +67,18 @@ SOLARIZED_THEME="dark"
 plugins=(
   git
   colorize
-  zsh-autosuggestions
-  navi
+# zsh-autosuggestions
+  # navi
+  docker
+  fd
+  fzf
+  httpie
+  jira
   ssh-agent
+  ripgrep
+  taskwarrior
+  vi-mode
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -151,6 +160,9 @@ alias last_friday_i="~/dotfiles/.scripts/tools/last_friday_i"
 alias vimrc="vim ~/.config/nvim/init.vim"
 alias zshrc="vim ~/.zshrc"
 
+withenv() {
+  env $(cat .env | grep -v ^# | xargs) $@
+}
 # [ -f ~/.forgit/forgit.plugin.zsh ] && source ~/.forgit/forgit.plugin.zsh
 
 export PATH="${PATH}:${HOME}/.local/bin/"
@@ -167,5 +179,12 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
-eval "$(bw completion --shell zsh); compdef _bw bw;"
-remind ~/.reminders
+# eval "$(bw completion --shell zsh); compdef _bw bw;"
+# remind ~/.reminders
+source /usr/share/nvm/init-nvm.sh
+
+export PATH="/home/cedric/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0:$PATH"
+export PATH="/home/cedric/.gem/ruby/2.7.0:$PATH"
+
+export DENO_INSTALL="/home/cedric/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"

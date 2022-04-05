@@ -8,7 +8,7 @@
 num=`task active | wc -l`
 if [ $num -gt "1" ]
   then
-    notify-send "Active Tasks" "`task active | tail -n +4 | head -n -1`" 
+    notify-send -u critical "Active Tasks" "`task active | tail -n +4 | head -n -1`" 
   else
     notify-send "No Active Tasks" "C'mon! What are you doing?" 
 fi

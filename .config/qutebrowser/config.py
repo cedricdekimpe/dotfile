@@ -455,7 +455,7 @@ c.colors.webpage.darkmode.policy.images = "never" # default was: "smart"
 c.content.geolocation = False
 
 # Disable notifications
-c.content.notifications = False
+c.content.notifications.enabled = False
 
 config.bind("<f12>", "devtools")
 # config.bind(',bw', 'spawn --userscript qute-bitwarden')

@@ -11,13 +11,12 @@ Plug 'honza/vim-snippets'
 " Utils
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'oblitum/rainbow'
 Plug 'tpope/vim-rails'
-Plug 'rorymckinley/vim-rubyhash' "convert ruby hash via rs rt and rs
+"Plug 'rorymckinley/vim-rubyhash' "convert ruby hash via rs rt and rs
 Plug 'pbrisbin/vim-mkdir' " self explanatory
+Plug 'vim-ruby/vim-ruby'
 " Plug 'stefanoverna/vim-i18n'
 Plug '~/code/vim-i18n'
-Plug 'jiangmiao/auto-pairs' "https://www.youtube.com/watch?v=4-uKkQ1fJ:s
 Plug 'tpope/vim-surround'
 Plug 'tommcdo/vim-lion'
 

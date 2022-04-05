@@ -48,6 +48,11 @@ taskd.credentials=WingTask/cedric@bousmanne.com/01c69ea6-de47-4236-adf2-26471917
 #news.version=2.6.0
 context.work.read=project:APT or +urgent
 context.work.write=project:APT or +urgent
-context=work
 
 urgency.user.tag.debug.coefficient=20 # +debug tag
+uda.reviewed.type=date
+uda.reviewed.label=Reviewed
+report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
+report._reviewed.columns=uuid
+report._reviewed.sort=reviewed+,modified+
+report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )

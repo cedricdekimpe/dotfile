@@ -1,7 +1,7 @@
 [user]
 	email = cedric@bousmanne.com
 	name = Cédric Bousmanne
-	signingkey = DAEF47D1
+	signingkey = CA38CF177A870454861C6E44F99F755F111716C7
 [alias]
 	st = status
 	appraise = !~/go/bin/git-appraise
@@ -12,6 +12,12 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [commit]
-	gpgSign = true
-[tag]
-	gpgSign = true
+	signing = true
+[merge]
+	signing = true
+[help]
+	autocorrect = prompt
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[interactive]
+	diffFilter = diff-so-fancy --patch

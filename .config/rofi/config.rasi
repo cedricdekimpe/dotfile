@@ -1,6 +1,7 @@
 configuration {
  modi: "window,drun,ssh,combi";
- theme: "gruvbox-dark";
  font: "hack 14";
  combi-modi: "window,drun,ssh";
 }
+
+@theme "gruvbox-dark"

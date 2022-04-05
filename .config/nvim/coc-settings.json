@@ -5,6 +5,8 @@
   "solargraph.formatting": true,
   "solargraph.hover": true,
   "solargraph.completion": true,
-  "solargraph.definitions": true
-
+  "solargraph.definitions": true,
+  "yaml.schemas": {
+      "kubernetes": "/*.yaml"
+  }
 }

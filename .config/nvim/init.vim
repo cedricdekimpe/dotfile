@@ -14,4 +14,5 @@ source ~/.config/nvim/modules/misc.vim
 
 call plug#end()
 
-colorscheme gruvbox
+Plug 'arcticicestudio/nord-vim'
+source ~/.config/nvim/plugged/nord-vim/colors/nord.vim
