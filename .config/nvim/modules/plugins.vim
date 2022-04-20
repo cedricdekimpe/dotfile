@@ -1,4 +1,4 @@
-Plug 'morhetz/gruvbox' " the gruvbox colorscheme
+"Plug 'morhetz/gruvbox' " the gruvbox colorscheme
 
 " Syntax colors
 Plug 'ianks/vim-tsx'
@@ -18,7 +18,7 @@ Plug 'vim-ruby/vim-ruby'
 " Plug 'stefanoverna/vim-i18n'
 Plug '~/code/vim-i18n'
 Plug 'tpope/vim-surround'
-Plug 'tommcdo/vim-lion'
+"Plug 'tommcdo/vim-lion'
 
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
