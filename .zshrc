@@ -146,10 +146,10 @@ bindkey "^N" down-line-or-beginning-search
 # zle -N edit-command-line
 # bindkey -M vicmd v edit-command-line
 
-alias ca=cd ~/code/apptweak
-alias caa=cd ~/code/apptweak/apptweak
-alias cab=cd ~/code/apptweak/apptweak-blog
-alias cai=cd ~/code/apptweak/infrastructure
+alias ca="cd ~/code/apptweak"
+alias caa="cd ~/code/apptweak/apptweak"
+alias cab="cd ~/code/apptweak/apptweak-blog"
+alias cai="cd ~/code/apptweak/infrastructure"
 
 alias vim="nvim"
 
