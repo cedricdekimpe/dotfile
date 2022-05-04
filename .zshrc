@@ -190,3 +190,5 @@ export DENO_INSTALL="/home/cedric/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 export NOTES_DIR="/home/cedric/Documents/Notes"
+
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
