@@ -308,8 +308,7 @@ activetags = {}
 globalkeys = gears.table.join(
 
 -- Custom keybindings
-
-    awful.key({ modkey, "Shift"}, "p", function () awful.spawn.with_shell("~/.config/awesome/power_menu.sh") end,
+    awful.key({ modkey, "Shift"}, "p", function () awful.spawn.with_shell("~/.config/rofi/powermenu/type-6/powermenu.sh") end,
               {description = "Power menu", group = "utility"}),
 
     awful.key({ modkey,           }, "s", function () awful.spawn.with_shell("env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U") end,
@@ -320,6 +319,8 @@ globalkeys = gears.table.join(
               {description = "open discord", group = "app"}),
     -- awful.key({ modkey,           }, "space", function () awful.spawn("rofi -show drun -display-drun '❯'") end,
     awful.key({ modkey,           }, "space", function () awful.spawn("rofi -show drun -display-drun -theme ~/.config/rofi/launchers/type-6/style-10.rasi '❯'") end,
+       {description = "show rofi", group = "app"}),
+    awful.key({ modkey,           }, "x", function () awful.spawn("rofi -show drun -display-drun -theme ~/.config/rofi/launchers/type-6/style-10.rasi '❯'") end,
        {description = "show rofi", group = "app"}),
     awful.key({ modkey, "Shift"}, ";", function () awful.spawn("splatmoji type") end,
       {description = "rofimoji", group = "app"}),
@@ -479,16 +480,16 @@ globalkeys = gears.table.join(
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run {
-                    prompt       = "Run Lua code: ",
-                    textbox      = awful.screen.focused().mypromptbox.widget,
-                    exe_callback = awful.util.eval,
-                    history_path = awful.util.get_cache_dir() .. "/history_eval"
-                  }
-              end,
-              {description = "lua execute prompt", group = "awesome"}),
+    -- awful.key({ modkey }, "x",
+    --           function ()
+    --               awful.prompt.run {
+    --                 prompt       = "Run Lua code: ",
+    --                 textbox      = awful.screen.focused().mypromptbox.widget,
+    --                 exe_callback = awful.util.eval,
+    --                 history_path = awful.util.get_cache_dir() .. "/history_eval"
+    --               }
+    --           end,
+    --           {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
