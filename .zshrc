@@ -113,7 +113,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export NODE_PATH=/home/cedric/.nvm/versions/node/v11.6.0/lib/node_modules/
 
 export VISUAL=nvim
@@ -168,10 +170,6 @@ withenv() {
 export PATH="${PATH}:${HOME}/.local/bin/"
 source /home/cedric/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 source $HOME/.aliases
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
@@ -181,7 +179,6 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # eval "$(bw completion --shell zsh); compdef _bw bw;"
 # remind ~/.reminders
-source /usr/share/nvm/init-nvm.sh
 
 export PATH="/home/cedric/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0:$PATH"
 export PATH="/home/cedric/.gem/ruby/2.7.0:$PATH"

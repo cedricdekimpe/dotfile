@@ -6,6 +6,7 @@
 	st = status
 	appraise = !~/go/bin/git-appraise
 	amend = commit --amend --no-edit
+	upstream = !git push -u origin HEAD
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true

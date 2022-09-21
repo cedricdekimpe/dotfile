@@ -1,0 +1,62 @@
+* Awesome
+My awesome rice contains two themes
+
+| Name | Description                                                                                                 | Picture                          |
+|------+-------------------------------------------------------------------------------------------------------------+----------------------------------|
+| Fox  | My first "real" rice. Has awesome colors, terminal theme, gtk-theme (in =.config/oomox=) and [[https://t.me/addtheme/dy3q98gjaQaBxoQE][telegram]] theme | [[file:.dotfiles-pictures/fox.png]]  |
+| Nord | A nord-based theme. Colors for terminal, custom prompt, awesome colors and custom telegram theme.           | [[file:.dotfiles-pictures/nord.png]] |
+
+The theme I'm using right now and is preconfigured is nord
+You can use it out of the box and it should work as expected for
+terminal applications. The prompt I use is [[https://github.com/noaccOS/pure][here]]
+To theme GUI programs you can use these themes:
+- [[https://github.com/EliverLara/Nordic][GTK Theme]]
+- [[https://github.com/noaccOS/telegram-nord-theme][Telegram Theme]]
+- [[https://github.com/ralphSQ/Nord-minimal-functional-fox][Firefox-css]]
+- [[https://addons.mozilla.org/en-US/firefox/addon/noaccos-nord/][Firefox theme]]
+- [[https://gist.github.com/dhilln/f74098c730659cd7d9fd4e4e15f5b8cd][Discord]]
+
+** Dependencies
+To get the most out of the rice, you're adviced to get all the required
+dependencies
+The list is for Arch Linux packages, the links are git links so you can
+search informations for your distribution
+
+| Arch name (embedded git link) | Usage / Description                     | Comment                                                                                                                                                                                          |
+|-------------------------------+-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [[https://github.com/awesomeWM/awesome][awesome-git]]                   | The window manager itself               | The git version is recommended to avoid icon errors in the bar                                                                                                                                   |
+| [[https://github.com/davatorium/rofi][rofi]]                          | Application launcher and emoji selector | Still searching for the right emoji selector though                                                                                                                                              |
+| [[https://github.com/kovidgoyal/kitty][kitty]]                         | Terminal emulator                       | If you want to use something else, be sure to import the [[file:.config/kitty/colors.conf][colors]]                                                                                                                                  |
+| [[https://github.com/fish-shell/fish-shell][fish]]                          | Shell                                   | You can find my theme [[https://github.com/noaccOS/pure][here]] (*INSTALLATION INSTRUCTION DON'T WORK ATM*) but be sure to return to the original one after it's rewritten so you can achieve the same without a forked version       |
+| [[https://github.com/dylanaraps/neofetch][neofetch]]                      | Terminal greeter                        | Display informations about the system                                                                                                                                                            |
+| [[https://github.com/ncopa/xfce-polkit][xfce-polkit]]                   | Polkit agent                            | Allows programs to run with elevated privileges (you can use another if you prefer but be sure to launch it from rc.lua)                                                                         |
+| [[https://github.com/ryanoasis/nerd-fonts][nerd-fonts-complete]]           | Nerd patched fonts                      | The solution I've found to render the workspaces as intended is to download the whole package. =nerd-fonts-icons= and =nerd-fonts-jetbrains-mono= suffice but the icons are bigger then intended |
+
+** Warning
+Some applications are set to always open in certain tags and/or
+monitors
+If you experience errors, consider editing/removing the lines in
+=.config/awesome/rc.lua=
+
+#+begin_src lua
+  -- Tag rules
+  { rule = { instance = "telegram-desktop"},
+    properties = {screen = 2, tag = "1"}},
+  { rule = { class = "discord"},
+    properties = {screen = 2, tag = "2"}},
+  { rule = { class = "[sS]potify"},
+    properties = {screen = 2}},
+#+end_src
+
+Also, some applications are set to *autostart*
+They are launched from the last line in =rc.lua= (=autostart()=)
+
+** Autostart function
+It doesn't work es expected, the first and second argument for now do
+the same thing, in future I hope to fix that
+
+| Argument                | What it does                                                                            |
+|-------------------------+-----------------------------------------------------------------------------------------|
+| First argument (string) | The program to launch with focus                                                        |
+| Second argument (table) | Launch the other programs, without steling the focus from the first (rn they do though) |
+| Third argument (table)  | Launch programs with a shell, useful for more complex commands like the polkit          |

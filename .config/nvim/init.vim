@@ -2,6 +2,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 source ~/.config/nvim/plugins.d/coc.vim
+" source ~/.config/nvim/plugins.d/lsp.vim
 "source ~/.config/nvim/plugins.d/scad.vim
 source ~/.config/nvim/plugins.d/vim-airline.vim
 source ~/.config/nvim/plugins.d/vim-gitgutter.vim
@@ -40,6 +41,8 @@ nnoremap <leader>nz :NewZettel
 nnoremap <leader>nsz :NewSecureZettel
 nnoremap <leader>lz :ListZettels<CR>
 
+nnoremap <leader><leader> <c-^> # switch between last 2 buffers
+
 " inoremap <expr> <c-x><c-s> fzf#vim#complete({
 " \ 'source':  "ls /$NOTES_DIR/Zettelkasten/",
 " \})
@@ -64,7 +67,6 @@ nnoremap <leader>ml :call FzfMarkdownLink()<CR>
 set backupskip+=*.gpg
 " To avoid that parts of the file is saved to .viminfo when yanking or
 " deleting, empty the 'viminfo' option.
-set viminfo=
 
 augroup encrypted
   au!
@@ -89,3 +91,5 @@ augroup encrypted
     \ setlocal nobin
 augroup END
 call plug#end()
+
+" lua require("config")
