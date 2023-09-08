@@ -67,8 +67,6 @@ SOLARIZED_THEME="dark"
 plugins=(
   git
   colorize
-# zsh-autosuggestions
-  # navi
   docker
   fd
   fzf
@@ -76,9 +74,10 @@ plugins=(
   jira
   ssh-agent
   ripgrep
-  taskwarrior
+  # taskwarrior
   vi-mode
   kubectl
+  battery
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -111,8 +110,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -131,6 +128,7 @@ bindkey -v # Vi m
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
+bindkey '^R' history-incremental-search-backward
 
 export KEYTIMEOUT=1 # reduce the timeout when changing mode
 
@@ -180,12 +178,14 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # eval "$(bw completion --shell zsh); compdef _bw bw;"
 # remind ~/.reminders
 
-export PATH="/home/cedric/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0:$PATH"
-export PATH="/home/cedric/.gem/ruby/2.7.0:$PATH"
-
 export DENO_INSTALL="/home/cedric/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 export NOTES_DIR="/home/cedric/Documents/Notes"
 
+export TERMINAL="kitty"
+
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
+
+RPROMPT='$(battery_pct_prompt)'
