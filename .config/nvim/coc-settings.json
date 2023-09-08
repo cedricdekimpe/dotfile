@@ -8,5 +8,8 @@
   "solargraph.definitions": true,
   "yaml.schemas": {
       "kubernetes": "/*.yaml"
-  }
+  },
+  "eslint.workingDirectories": [
+    {"mode": "auto"}
+ ]
 }
